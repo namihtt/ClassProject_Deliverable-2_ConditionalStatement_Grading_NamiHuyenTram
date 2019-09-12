@@ -6,6 +6,12 @@ namespace ClassProject_Deliverable_2_ConditionalStatement_Grading_NamiHuyenTram
     {
         static void Main(string[] args)
         {
+            /*
+            Programmer: (Nami) Huyen Tram
+            Date: 9/12/2019
+            Comments: ISM 4300.001F19 - Class Project - Deliverable 2 - Conditional Statement
+           */
+
             // declare variable
             int percentGrade;
 
