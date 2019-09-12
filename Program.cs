@@ -9,13 +9,13 @@ namespace ClassProject_Deliverable_2_ConditionalStatement_Grading_NamiHuyenTram
             // declare variable
             int percentGrade;
 
-            // try catch to make sure program will not crash if user input something unexpected.
+            // try catch to make sure program will not crash if user input a string data type.
             try
             {
                 // asking user to input a number
                 Console.WriteLine("What percent grade do you expect to earn in the ISM 4300 class?");
 
-                // declare variable and read the user input
+                // read the user input
                 percentGrade = int.Parse(Console.ReadLine());
 
                 // call GDisplay custom method
@@ -23,6 +23,7 @@ namespace ClassProject_Deliverable_2_ConditionalStatement_Grading_NamiHuyenTram
 
             } // end of try
 
+            // catch and display message when user input a string data type
             catch
             {
                 Console.Write("Your input was invalid. " +
@@ -30,17 +31,23 @@ namespace ClassProject_Deliverable_2_ConditionalStatement_Grading_NamiHuyenTram
                     "and enter a number in the 100 percent grade scale only! ");
             } // end of catch
 
-            // This custom method wil make sure the percentgrade input by the user fall into the range of 0 to 100
+            // This custom method wil make sure the percent grade input by the user fall into the range of 0 to 100
             void GDisplay()
             {
-                // if else statements to decide what to display
+                // if user input a number > 100, message will be displayed to ask for another input
                 if (percentGrade > 100)
                 {
                     Console.Write("Wait! Your percent grade cannot be " +
                         "more than 100 in this class! Please input another number from 0 to 100: ");
+
+                    // read the new input
                     percentGrade = int.Parse(Console.ReadLine());
+
+                    // call GDisplay custom method to check the input again
                     GDisplay();
                 }
+
+                // if input falls into 0-100 range, display the grade by calling GradeDisplay method
                 else
                 {
                     GradeDisplay();
